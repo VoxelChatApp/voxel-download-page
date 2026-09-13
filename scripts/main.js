@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/Fuzzy-Z/PulseCord/releases/download/v1.0.95/Voxel-Setup-1.0.95.exe';
-let currentVersion = '1.0.95';
-let currentFileSize = '127 MB';
-let currentFileName = 'Voxel-Setup-1.0.95.exe';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.98/Voxel-Setup-1.0.98.exe';
+let currentVersion = '1.0.98';
+let currentFileSize = '137 MB';
+let currentFileName = 'Voxel-Setup-1.0.98.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA
@@ -86,7 +86,7 @@ function detectUserPlatform() {
  */
 async function fetchLatestRelease() {
   try {
-    const res = await fetch('https://api.github.com/repos/Fuzzy-Z/PulseCord/releases/latest');
+    const res = await fetch('https://api.github.com/repos/VoxelChatApp/voxel-download-page/releases/latest');
     if (res.ok) {
       const data = await res.json();
       const asset = data.assets?.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));

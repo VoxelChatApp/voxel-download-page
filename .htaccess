@@ -1,9 +1,9 @@
 RewriteEngine On
 
 # Redirect /baixar, /download, /setup.exe directly to release
-RewriteRule ^baixar/?$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.98/Voxel-Setup-1.0.98.exe [R=302,L]
-RewriteRule ^download/?$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.98/Voxel-Setup-1.0.98.exe [R=302,L]
-RewriteRule ^setup\.exe$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.98/Voxel-Setup-1.0.98.exe [R=302,L]
+RewriteRule ^baixar/?$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.105/Voxel-Setup-1.0.105.exe [R=302,L]
+RewriteRule ^download/?$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.105/Voxel-Setup-1.0.105.exe [R=302,L]
+RewriteRule ^setup\.exe$ https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.105/Voxel-Setup-1.0.105.exe [R=302,L]
 
 # Rewrite /obrigado to obrigado.html
 RewriteRule ^obrigado/?$ obrigado.html [QSA,L]

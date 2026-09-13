@@ -304,7 +304,7 @@ function setupFaqContactForm() {
  * Trigger file download and redirect user to Thank You page
  */
 function setupDownloadRedirects() {
-  const thankYouTarget = window.location.protocol === 'file:' ? 'obrigado.html?download=auto' : '/obrigado?download=auto';
+  const thankYouTarget = 'obrigado.html?download=auto';
 
   const downloadSelectors = [
     '#primaryDownloadBtn',

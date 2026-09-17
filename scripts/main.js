@@ -90,7 +90,7 @@ async function fetchLatestRelease() {
     if (res.ok) {
       const data = await res.json();
       const asset = data.assets?.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));
-      if (asset) {
+      if (asset && data.tag_name && data.tag_name.replace(/^v/, '') === currentVersion) {
         currentDownloadUrl = asset.browser_download_url;
         currentFileName = asset.name;
         if (data.tag_name) {

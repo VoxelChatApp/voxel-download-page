@@ -571,7 +571,7 @@
         if (res.ok) {
           const data = await res.json();
           const asset = data.assets?.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));
-          if (asset) {
+          if (asset && data.tag_name && data.tag_name.replace(/^v/, '') === '1.0.115') {
             downloadUrl = asset.browser_download_url;
             fileName = asset.name;
             const retry = document.getElementById('retryDownloadBtn');

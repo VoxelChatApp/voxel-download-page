@@ -513,6 +513,11 @@
                 </div>
                 <span class="asset-meta" style="color: var(--status-stable); font-weight: 700;">164 MB</span>
               </a>
+
+              <div class="download-asset-item in-progress">
+                <span>Pacote Portátil (.zip)</span>
+                <span class="asset-meta">EM BREVE</span>
+              </div>
             </div>
           </div>
 
@@ -591,33 +596,32 @@
                 <span class="asset-meta" style="color: var(--status-stable); font-weight: 700;">196 MB</span>
               </a>
 
-              <!-- Linux curl terminal box with copy -->
-              <div class="linux-curl-box">
-                <div class="linux-curl-header">
-                  <div class="linux-curl-label">
-                    <span>Instalação Direta via Terminal</span>
+              <!-- Terminal curl installer with hover dropdown & click-to-copy -->
+              <div class="terminal-hover-wrapper">
+                <div class="download-asset-item terminal-hover-trigger" data-copy="curl -sSL https://app.voxelchat.com.br/install.sh | bash" title="Clique para copiar comando de instalação">
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="4 17 10 11 4 5" />
+                      <line x1="12" y1="19" x2="20" y2="19" />
+                    </svg>
+                    <span style="font-weight: 700; color: var(--text-primary);">Terminal (curl install)</span>
                   </div>
-                  <button type="button" class="copy-btn" data-copy="curl -sSL https://app.voxelchat.com.br/install.sh | bash"
-                    style="background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-subtle); padding: 0.25rem 0.65rem; font-size: 0.72rem; cursor: pointer; border-radius: 4px; font-weight: 600;">
-                    COPIAR
-                  </button>
+                  <span class="asset-meta" style="color: var(--status-stable); font-weight: 700;">COPIAR ▾</span>
                 </div>
-                <div class="linux-curl-cmd-row">
-                  <span style="color: var(--status-stable); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; user-select: none;">$</span>
-                  <code class="linux-curl-cmd">curl -sSL https://app.voxelchat.com.br/install.sh | bash</code>
-                </div>
-              </div>
 
-              <div class="download-asset-item in-progress" style="margin-top: 0.5rem;">
-                <span>Pacote AppImage (Portátil)</span>
-                <span class="asset-meta">EM BREVE</span>
+                <div class="terminal-hover-dropdown">
+                  <div class="terminal-hover-code">
+                    <span style="color: var(--status-stable); user-select: none;">$</span>
+                    <code>curl -sSL https://app.voxelchat.com.br/install.sh | bash</code>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="checksum-drawer">
             <span>STATUS</span>
-            <span class="checksum-hash" style="color: var(--status-stable);">● DISPONÍVEL (.deb & curl)</span>
+            <span class="checksum-hash" style="color: var(--status-stable);">● DISPONÍVEL (196 MB)</span>
             <a href="https://app.voxelchat.com.br/download/linux"
               download="Voxel-1.0.110-amd64.deb" class="copy-btn"
               style="background: var(--text-primary); color: var(--bg-deep); font-weight: 700;">BAIXAR .DEB</a>

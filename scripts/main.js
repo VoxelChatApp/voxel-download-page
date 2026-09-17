@@ -137,18 +137,19 @@ function updateAllDownloadLinks() {
  */
 function setupCopyButtons() {
   document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', async (e) => {
       const textToCopy = btn.getAttribute('data-copy');
       if (!textToCopy) return;
 
       try {
         await navigator.clipboard.writeText(textToCopy);
-        const originalText = btn.textContent;
-        btn.textContent = 'COPIADO ✓';
+        const metaEl = btn.querySelector('.asset-meta') || btn;
+        const originalText = metaEl.textContent;
+        metaEl.textContent = 'COPIADO ✓';
         btn.classList.add('copied');
 
         setTimeout(() => {
-          btn.textContent = originalText;
+          metaEl.textContent = originalText;
           btn.classList.remove('copied');
         }, 2000);
       } catch (err) {

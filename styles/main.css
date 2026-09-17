@@ -824,6 +824,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 2.5rem;
+  align-items: stretch;
 }
 
 .platform-card {
@@ -836,6 +837,17 @@ button {
   justify-content: space-between;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
   transition: border-color 0.15s ease, transform 0.1s ease;
+  height: 100%;
+}
+
+.platform-card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.platform-card p {
+  min-height: 44px;
 }
 
 .platform-card:hover {
@@ -1206,48 +1218,60 @@ details[open] .version-dropdown-toggle .toggle-icon {
   color: var(--text-primary);
 }
 
-/* Linux quick curl install box inside card */
-.linux-curl-box {
-  margin-top: 0.75rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-medium);
+/* Terminal hover dropdown inside platform card */
+.terminal-hover-wrapper {
+  position: relative;
+}
+
+.terminal-hover-trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+.terminal-hover-trigger:hover {
+  border-color: rgba(163, 230, 53, 0.45) !important;
+  background: var(--bg-elevated) !important;
+}
+
+.terminal-hover-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #090d13;
+  border: 1px solid rgba(163, 230, 53, 0.35);
   border-radius: var(--radius-xs);
-  padding: 0.75rem 0.85rem;
+  padding: 0.6rem 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none;
 }
 
-.linux-curl-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.45rem;
+.terminal-hover-wrapper:hover .terminal-hover-dropdown,
+.terminal-hover-wrapper:focus-within .terminal-hover-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.linux-curl-label {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--status-stable);
-  font-weight: 600;
-}
-
-.linux-curl-cmd-row {
+.terminal-hover-code {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--bg-deep);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  padding: 0.5rem 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  white-space: nowrap;
   overflow-x: auto;
 }
 
-.linux-curl-cmd {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--text-primary);
-  white-space: nowrap;
+.terminal-hover-code code {
+  color: var(--status-stable);
   user-select: all;
 }
 

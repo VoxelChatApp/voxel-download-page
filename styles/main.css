@@ -1123,6 +1123,136 @@ kbd {
 }
 
 /* --------------------------------------------------------------------------
+   VERSION CHANGELOG ACCORDION & DROPDOWN
+   -------------------------------------------------------------------------- */
+.version-changelog-details {
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+}
+
+.version-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  list-style: none;
+}
+
+.version-dropdown-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.version-dropdown-toggle:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+  color: var(--status-stable);
+}
+
+.version-dropdown-toggle .toggle-icon {
+  transition: transform 0.2s ease;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+details[open] .version-dropdown-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.version-dropdown-content {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.version-category-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 1rem 1.15rem;
+}
+
+.version-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.65rem;
+}
+
+.version-group-title .group-pill {
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.7rem;
+  color: var(--text-primary);
+}
+
+/* Linux quick curl install box inside card */
+.linux-curl-box {
+  margin-top: 0.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: 0.75rem 0.85rem;
+}
+
+.linux-curl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.linux-curl-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--status-stable);
+  font-weight: 600;
+}
+
+.linux-curl-cmd-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.5rem 0.65rem;
+  overflow-x: auto;
+}
+
+.linux-curl-cmd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  user-select: all;
+}
+
+
+/* --------------------------------------------------------------------------
    FAQ ACCORDION
    -------------------------------------------------------------------------- */
 .faq-grid {

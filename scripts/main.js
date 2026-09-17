@@ -55,7 +55,7 @@ function detectUserPlatform() {
   } else if (userAgent.includes('linux') || platform.includes('linux')) {
     osName = 'Linux';
     osIcon = '🐧';
-    isAvailable = false;
+    isAvailable = true;
   }
 
   // Update Main Download CTA text & properties
@@ -66,11 +66,19 @@ function detectUserPlatform() {
 
   if (titleEl && subEl && iconEl && mainBtn) {
     if (isAvailable) {
-      titleEl.textContent = `Baixar para ${osName}`;
-      subEl.textContent = `v${currentVersion} (Instalador .exe) • ${currentFileSize}`;
-      iconEl.textContent = osIcon;
-      mainBtn.href = currentDownloadUrl;
-      mainBtn.setAttribute('download', currentFileName);
+      if (osName === 'Linux') {
+        titleEl.textContent = 'Baixar para Linux';
+        subEl.textContent = `v${currentVersion} (.deb & terminal) • 196 MB`;
+        iconEl.textContent = osIcon;
+        mainBtn.href = 'https://app.voxelchat.com.br/download/linux';
+        mainBtn.setAttribute('download', 'Voxel-1.0.110-amd64.deb');
+      } else {
+        titleEl.textContent = `Baixar para ${osName}`;
+        subEl.textContent = `v${currentVersion} (Instalador .exe) • ${currentFileSize}`;
+        iconEl.textContent = osIcon;
+        mainBtn.href = currentDownloadUrl;
+        mainBtn.setAttribute('download', currentFileName);
+      }
     } else {
       titleEl.textContent = `${osName} (Em andamento)`;
       subEl.textContent = `v${currentVersion} • Em desenvolvimento`;
@@ -159,7 +167,7 @@ function setupTerminalTabs() {
   const copyBtn = document.getElementById('terminalCopyBtn');
 
   const commands = {
-    curl: 'curl -fsSL https://getvoxel.dev/install.sh | sh',
+    curl: 'curl -sSL https://app.voxelchat.com.br/install.sh | bash',
     winget: 'winget install Fuzzy-Z.Voxel',
     brew: 'brew install fuzzy-z/tap/voxel',
     cargo: 'cargo install voxel-cli --locked'
@@ -319,6 +327,12 @@ function setupDownloadRedirects() {
 
   downloadElements.forEach(el => {
     el.addEventListener('click', (e) => {
+      // If element is inside Linux card or download link for Linux, let normal download flow happen or handle target
+      const href = el.getAttribute('href') || '';
+      if (href.includes('/download/linux') || href.endsWith('.deb')) {
+        return; // standard download
+      }
+
       e.preventDefault();
 
       // 1. Trigger the download of the executable
@@ -336,5 +350,3 @@ function setupDownloadRedirects() {
     });
   });
 }
-
-

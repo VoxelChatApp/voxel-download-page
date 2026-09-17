@@ -432,7 +432,7 @@
         <div class="spec-blueprint-card">
           <div class="spec-header">
             <span class="spec-tag">MATRIZ TÉCNICA VOXEL</span>
-            <span class="version-tag">PRODUÇÃO v1.0.37</span>
+            <span class="version-tag">PRODUÇÃO v1.0.115</span>
           </div>
 
           <ul class="spec-list">
@@ -567,29 +567,61 @@
                 <span>🐧</span>
                 <span>Linux</span>
               </div>
-              <span class="platform-arch-pill badge-in-progress">EM ANDAMENTO</span>
+              <span class="platform-arch-pill"
+                style="color: var(--status-stable); border-color: rgba(163, 230, 53, 0.35);">OFICIAL // ATIVO</span>
             </div>
 
             <p style="color: var(--text-muted); font-size: 0.88rem;">
-              Pacotes AppImage e Debian/Ubuntu em fase de testes e compatibilidade.
+              Compatível com Debian, Ubuntu, Pop!_OS, Mint e derivadas x64. Suporte a chamadas WebRTC com baixa latência, aceleração de GPU e atalho nativo no sistema.
             </p>
 
             <div class="platform-file-list">
-              <div class="download-asset-item in-progress">
-                <span>Pacote AppImage</span>
-                <span class="asset-meta">EM ANDAMENTO</span>
+              <a href="https://app.voxelchat.com.br/download/linux"
+                download="Voxel-1.0.110-amd64.deb" class="download-asset-item"
+                style="border-color: var(--border-strong); background: var(--bg-elevated);">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span style="font-weight: 700; color: var(--text-primary);">Debian / Ubuntu (.deb)</span>
+                </div>
+                <span class="asset-meta" style="color: var(--status-stable); font-weight: 700;">196 MB</span>
+              </a>
+
+              <!-- Linux curl terminal box with copy -->
+              <div class="linux-curl-box">
+                <div class="linux-curl-header">
+                  <div class="linux-curl-label">
+                    <span>⚡</span>
+                    <span>Instalação Direta via Terminal</span>
+                  </div>
+                  <button type="button" class="copy-btn" data-copy="curl -sSL https://app.voxelchat.com.br/install.sh | bash"
+                    style="background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-subtle); padding: 0.25rem 0.65rem; font-size: 0.72rem; cursor: pointer; border-radius: 4px; font-weight: 600;">
+                    COPIAR
+                  </button>
+                </div>
+                <div class="linux-curl-cmd-row">
+                  <span style="color: var(--status-stable); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; user-select: none;">$</span>
+                  <code class="linux-curl-cmd">curl -sSL https://app.voxelchat.com.br/install.sh | bash</code>
+                </div>
               </div>
-              <div class="download-asset-item in-progress">
-                <span>Debian / Ubuntu (.deb)</span>
-                <span class="asset-meta">EM ANDAMENTO</span>
+
+              <div class="download-asset-item in-progress" style="margin-top: 0.5rem;">
+                <span>Pacote AppImage (Portátil)</span>
+                <span class="asset-meta">EM BREVE</span>
               </div>
             </div>
           </div>
 
           <div class="checksum-drawer">
             <span>STATUS</span>
-            <span class="checksum-hash" style="color: var(--text-muted);">EM ANDAMENTO // BREVE</span>
-            <span class="copy-btn" style="opacity: 0.5;">AGUARDE</span>
+            <span class="checksum-hash" style="color: var(--status-stable);">● DISPONÍVEL (.deb & curl)</span>
+            <a href="https://app.voxelchat.com.br/download/linux"
+              download="Voxel-1.0.110-amd64.deb" class="copy-btn"
+              style="background: var(--text-primary); color: var(--bg-deep); font-weight: 700;">BAIXAR .DEB</a>
           </div>
         </div>
 
@@ -659,75 +691,237 @@
 
       <div class="ledger-container">
 
-        <div class="ledger-entry">
+        <!-- Latest Version: v1.0.115 -->
+        <div class="ledger-entry" style="border-color: rgba(163, 230, 53, 0.35); background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(163, 230, 53, 0.02) 100%);">
           <div class="ledger-header">
             <div class="ledger-version">
-              <span class="version-name">v1.0.37</span>
+              <span class="version-name" style="color: var(--status-stable);">v1.0.115</span>
               <span class="badge-release latest">ÚLTIMA VERSÃO ESTÁVEL</span>
             </div>
-            <span class="ledger-date">Hoje</span>
+            <span class="ledger-date">17 de Setembro de 2026 (Hoje)</span>
           </div>
 
           <ul class="ledger-items">
             <li>
-              <span class="ledger-tag">[SISTEMA]</span>
-              <span>Remoção completa de telemetria residual e funcionalidades paywall (Nitro/Soundboard) para foco total
-                na comunicação.</span>
+              <span class="ledger-tag" style="color: var(--status-stable);">[AUTOUPDATE]</span>
+              <span>Novo motor de atualização automática sem reinicialização forçada, com suporte a privilégios administrativos no Windows (<code>C:\Program Files</code>) e janelas de console do CMD totalmente ocultas.</span>
             </li>
             <li>
-              <span class="ledger-tag">[UI]</span>
-              <span>Correção do efeito de desfoque Liquid Glass e aprimoramento na renderização de sombras.</span>
+              <span class="ledger-tag" style="color: var(--status-stable);">[LINUX OFICIAL]</span>
+              <span>Lançamento do pacote nativo <strong>.deb</strong> para Debian/Ubuntu e script de instalação automatizado via terminal <code>curl -sSL https://app.voxelchat.com.br/install.sh | bash</code> com atalhos no sistema.</span>
+            </li>
+            <li>
+              <span class="ledger-tag" style="color: var(--status-stable);">[VOZ & WEBRTC]</span>
+              <span>Correção definitiva de áudio WebRTC em chamadas diretas e salas de voz, com reconexão instantânea resiliente após instabilidades de sinalização.</span>
+            </li>
+            <li>
+              <span class="ledger-tag" style="color: var(--status-stable);">[PRESENÇA & SOCIAL]</span>
+              <span>Indicadores dinâmicos de status "Em Voz" nas conversas diretas (DMs), no cabeçalho e na lista de membros, além de suporte a fotos personalizadas em servidores.</span>
+            </li>
+            <li>
+              <span class="ledger-tag" style="color: var(--status-stable);">[SEGURANÇA & DADOS]</span>
+              <span>Persistência completa de canais e servidores em banco de dados PostgreSQL integrado, imune a reinicializações ou quedas de serviço.</span>
+            </li>
+          </ul>
+
+          <!-- Interactive Dropdown with All Changelog Details -->
+          <details class="version-changelog-details">
+            <summary class="version-dropdown-toggle">
+              <span>✨ Ver todas as novidades da v1.0.115 (detalhes dos commits)</span>
+              <span class="toggle-icon">▼</span>
+            </summary>
+
+            <div class="version-dropdown-content">
+              <div class="version-category-card">
+                <div class="version-group-title">
+                  <span class="group-pill">⚡ SISTEMA & AUTOUPDATE</span>
+                  <span>Atualizações OTA e Instalador</span>
+                </div>
+                <ul class="ledger-items">
+                  <li>
+                    <span class="ledger-tag">[v1.0.115]</span>
+                    <span>Fix definitivo no instalador do updater e reinicialização suave (commit <code>543fd9c</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.112]</span>
+                    <span>Ocultação total de janelas de console do CMD durante aplicação de patches em segundo plano (commit <code>3370215</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.111]</span>
+                    <span>Correção de permissões no Windows (EPERM em <code>C:\Program Files</code>) com suporte a elevação e swap assistido (commit <code>0b8745d</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.111]</span>
+                    <span>Janela de atualização agora busca e exibe dinamicamente a versão exata do commit do servidor via <code>/api/version</code> (commit <code>b77ff0c</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.109]</span>
+                    <span>Pipeline automatizado de empacotamento com validação de integridade do arquivo .asar.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="version-category-card">
+                <div class="version-group-title">
+                  <span class="group-pill">🐧 LINUX & MULTIPLATAFORMA</span>
+                  <span>Distribuição e Instalação Simplificada</span>
+                </div>
+                <ul class="ledger-items">
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Empacotamento Debian oficial (<code>.deb</code> 196 MB) com ícones, lançador de desktop e dependências nativas (commit <code>4873b4c</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Script oficial de instalação rápida via terminal: <code>curl -sSL https://app.voxelchat.com.br/install.sh | bash</code> (commit <code>4873b4c</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Fallback com suporte a <code>--no-sandbox</code> no script de inicialização para compatibilidade em qualquer distro (commit <code>705bcf9</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Adição da seção de downloads (Windows, Linux .deb e comando curl) na tela de login Web (commit <code>04e7c56</code>).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="version-category-card">
+                <div class="version-group-title">
+                  <span class="group-pill">🎙️ VOZ, WEBRTC & COMUNICAÇÃO</span>
+                  <span>Áudio de Ultra Baixa Latência</span>
+                </div>
+                <ul class="ledger-items">
+                  <li>
+                    <span class="ledger-tag">[v1.0.113]</span>
+                    <span>Reconexão automática das chamadas de voz e áudio após instabilidade ou queda temporária na sinalização (commit <code>6cb2aec</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Correção no áudio de chamadas associando diretamente o fluxo WebRTC a elementos de áudio nativos (commit <code>aea7655</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Novo status visual "Em Voz" nas conversas diretas (DMs), cabeçalho de conversa e na barra lateral de participantes (commit <code>fa015f8</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.95]</span>
+                    <span>Integração de relay TURN (CoTURN na nuvem Oracle) com negociação perfeita (Perfect Negotiation) para redes com firewall/CGNAT.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="version-category-card">
+                <div class="version-group-title">
+                  <span class="group-pill">🎨 INTERFACE, SOCIAL & LOGIN</span>
+                  <span>Experiência do Usuário</span>
+                </div>
+                <ul class="ledger-items">
+                  <li>
+                    <span class="ledger-tag">[v1.0.114]</span>
+                    <span>Suporte a upload e fotos customizadas para avatares de servidores (commit <code>6f4166f</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.110]</span>
+                    <span>Login automático e instantâneo na verificação de e-mail para contas existentes, eliminando timeouts de tela (commit <code>fed7030</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.109]</span>
+                    <span>Build de produção e deploy automatizado do bundle Web para a VPS do Voxel (commit <code>9d37f87</code>).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="version-category-card">
+                <div class="version-group-title">
+                  <span class="group-pill">🛡️ BANCO DE DADOS & SEGURANÇA</span>
+                  <span>Estabilidade e Persistência</span>
+                </div>
+                <ul class="ledger-items">
+                  <li>
+                    <span class="ledger-tag">[v1.0.107]</span>
+                    <span>Migração e persistência definitiva de servidores, canais e mensagens no PostgreSQL (commit <code>5541eab</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.108]</span>
+                    <span>Reforço de segurança no boot do servidor com validação e fallback seguro para <code>JWT_SECRET</code> (commit <code>dd30886</code>).</span>
+                  </li>
+                  <li>
+                    <span class="ledger-tag">[v1.0.108]</span>
+                    <span>Proteção de concorrência na escrita de arquivos e manipulação segura de papéis e permissões (commit <code>cc74934</code>).</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Previous Version: v1.0.110 -->
+        <div class="ledger-entry">
+          <div class="ledger-header">
+            <div class="ledger-version">
+              <span class="version-name">v1.0.110</span>
+              <span class="version-tag">STABLE</span>
+            </div>
+            <span class="ledger-date">17 de Setembro de 2026</span>
+          </div>
+
+          <ul class="ledger-items">
+            <li>
+              <span class="ledger-tag">[LINUX]</span>
+              <span>Lançamento do pacote instalador .deb e script curl com instalador completo para Linux.</span>
             </li>
             <li>
               <span class="ledger-tag">[VOZ]</span>
-              <span>Correção de sintaxe crítica e otimização na alocação de memória no servidor de sinalização
-                WebRTC.</span>
+              <span>Fix na reprodução de áudio WebRTC em chamadas e sinalização de canais.</span>
+            </li>
+            <li>
+              <span class="ledger-tag">[UI]</span>
+              <span>Indicador dinâmico de presença em chamada de voz nas DMs e barra de membros.</span>
             </li>
           </ul>
         </div>
 
+        <!-- Previous Version: v1.0.105 -->
         <div class="ledger-entry">
           <div class="ledger-header">
             <div class="ledger-version">
-              <span class="version-name">v1.0.36</span>
+              <span class="version-name">v1.0.105</span>
               <span class="version-tag">STABLE</span>
             </div>
-            <span class="ledger-date">Lançamento anterior</span>
+            <span class="ledger-date">13 de Setembro de 2026</span>
           </div>
 
           <ul class="ledger-items">
             <li>
-              <span class="ledger-tag">[BUILD]</span>
-              <span>Lançamento do pacote portátil otimizado Windows x64 comprimido (~129 MB).</span>
+              <span class="ledger-tag">[BANCO DE DADOS]</span>
+              <span>Integração de persistência em PostgreSQL para canais e servidores evitando perda de dados no reboot.</span>
             </li>
             <li>
-              <span class="ledger-tag">[VOZ]</span>
-              <span>Refinamento na supressão de ruído no AudioContext e sincronização WebRTC contínua.</span>
-            </li>
-            <li>
-              <span class="ledger-tag">[UI]</span>
-              <span>Novo design monolítico e refinamento dos temas escuros e componentes tácteis.</span>
+              <span class="ledger-tag">[SEGURANÇA]</span>
+              <span>Blindagem do boot do servidor com verificação de integridade e fallback seguro de tokens.</span>
             </li>
           </ul>
         </div>
 
+        <!-- Previous Version: v1.0.100 -->
         <div class="ledger-entry">
           <div class="ledger-header">
             <div class="ledger-version">
-              <span class="version-name">v1.0.35</span>
+              <span class="version-name">v1.0.100</span>
               <span class="version-tag">STABLE</span>
             </div>
-            <span class="ledger-date">Lançamento anterior</span>
+            <span class="ledger-date">13 de Setembro de 2026</span>
           </div>
 
           <ul class="ledger-items">
             <li>
-              <span class="ledger-tag">[SISTEMA]</span>
-              <span>Empacotamento ASAR ultracompacto e redução de 22% no consumo de memória em segundo plano.</span>
+              <span class="ledger-tag">[OTA UPDATE]</span>
+              <span>Novo sistema de distribuição de atualizações OTA diretamente da nuvem Oracle.</span>
             </li>
             <li>
-              <span class="ledger-tag">[TELA]</span>
-              <span>Suporte aprimorado para captura de áudio de aplicativos no Windows 10/11.</span>
+              <span class="ledger-tag">[WEBRTC]</span>
+              <span>Implementação de relay CoTURN para contornar bloqueios de operadoras e CGNAT.</span>
             </li>
           </ul>
         </div>
@@ -918,7 +1112,7 @@
           <ul class="footer-col-links">
             <li><a href="#download-win">Windows (x64/ARM)</a></li>
             <li><a href="#download-mac">macOS (Universal)</a></li>
-            <li><a href="#download-linux">Linux (AppImage)</a></li>
+            <li><a href="#download-linux">Linux (.deb & curl)</a></li>
             <li><a href="#downloads">Todas as Versões</a></li>
           </ul>
         </div>
@@ -951,7 +1145,7 @@
           <span>VOXEL // DESENVOLVIDO POR FUZZY-Z</span>
         </div>
         <div>
-          <span>VERSÃO ATIVA: v1.0.37</span>
+          <span>VERSÃO ATIVA: v1.0.115</span>
         </div>
         <div>
           <span>TODOS OS SISTEMAS OPERACIONAIS</span>

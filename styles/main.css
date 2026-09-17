@@ -1218,62 +1218,7 @@ details[open] .version-dropdown-toggle .toggle-icon {
   color: var(--text-primary);
 }
 
-/* Terminal hover dropdown inside platform card */
-.terminal-hover-wrapper {
-  position: relative;
-}
 
-.terminal-hover-trigger {
-  cursor: pointer;
-  user-select: none;
-}
-
-.terminal-hover-trigger:hover {
-  border-color: rgba(163, 230, 53, 0.45) !important;
-  background: var(--bg-elevated) !important;
-}
-
-.terminal-hover-dropdown {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  right: 0;
-  background: #090d13;
-  border: 1px solid rgba(163, 230, 53, 0.35);
-  border-radius: var(--radius-xs);
-  padding: 0.6rem 0.75rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75);
-  z-index: 50;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-  pointer-events: none;
-}
-
-.terminal-hover-wrapper:hover .terminal-hover-dropdown,
-.terminal-hover-wrapper:focus-within .terminal-hover-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.terminal-hover-code {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--text-primary);
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-.terminal-hover-code code {
-  color: var(--status-stable);
-  user-select: all;
-}
 
 
 /* --------------------------------------------------------------------------

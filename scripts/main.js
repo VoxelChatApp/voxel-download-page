@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.116/Voxel-Setup-1.0.116.exe';
-let currentVersion = '1.0.116';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.117/Voxel-Setup-1.0.117.exe';
+let currentVersion = '1.0.117';
 let currentFileSize = '164 MB';
-let currentFileName = 'Voxel-Setup-1.0.116.exe';
+let currentFileName = 'Voxel-Setup-1.0.117.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA
@@ -68,7 +68,7 @@ function detectUserPlatform() {
     if (isAvailable) {
       if (osName === 'Linux') {
         titleEl.textContent = 'Baixar para Linux';
-        subEl.textContent = `v${currentVersion} (.deb & terminal) • 196 MB`;
+        subEl.textContent = 'v1.0.110 (.deb & terminal) • 196 MB';
         iconEl.textContent = osIcon;
         mainBtn.href = 'https://app.voxelchat.com.br/download/linux';
         mainBtn.setAttribute('download', 'Voxel-1.0.110-amd64.deb');
@@ -120,7 +120,7 @@ async function fetchLatestRelease() {
  * Update all download links across cards and sticky navigation
  */
 function updateAllDownloadLinks() {
-  document.querySelectorAll('a[download*="Voxel"], a[href*="releases/download"]').forEach(a => {
+  document.querySelectorAll('a[download$=".exe"], a[href*="releases/download"][href$=".exe"]').forEach(a => {
     a.href = currentDownloadUrl;
     a.setAttribute('download', currentFileName);
   });

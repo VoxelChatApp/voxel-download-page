@@ -75,11 +75,17 @@ publicando em paralelo, desconecte o repositório no dashboard dela
 
 ### Ao lançar uma nova versão do Voxel
 
-A URL do instalador está fixada em dois lugares e os dois precisam ser
-atualizados juntos:
+As páginas principal e de agradecimento consultam a última release pública do
+GitHub e usam seu instalador Windows, sem exigir uma versão fixa. Se a API
+estiver indisponível, usam o fallback publicado no código.
 
-- `.htaccess` — os redirects `/baixar`, `/download` e `/setup.exe`
-- `scripts/main.js` — a constante `currentDownloadUrl` (linha 35)
+Ao publicar uma release, atualizar também os fallbacks em index.html,
+scripts/main.js e obrigado.html, além dos redirects em .htaccess
+(/baixar, /download e /setup.exe) e na configuração legada vercel.json.
+
+O clique na página principal inicia o download e navega para
+obrigado.html?download=started, sem iniciar o mesmo arquivo duas vezes.
+O acesso direto com ?download=auto mantém o início automático do download.
 
 ## 📦 Estrutura do Projeto
 

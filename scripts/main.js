@@ -48,7 +48,10 @@ function detectUserPlatform() {
   let osIcon = '⊞';
   let isAvailable = true;
 
-  if (userAgent.includes('mac') || platform.includes('mac')) {
+  if (userAgent.includes('android')) {
+    osName = 'Android';
+    osIcon = '▯';
+  } else if (userAgent.includes('mac') || platform.includes('mac')) {
     osName = 'macOS';
     osIcon = '';
     isAvailable = false;
@@ -65,8 +68,23 @@ function detectUserPlatform() {
   const mainBtn = document.getElementById('primaryDownloadBtn');
 
   if (titleEl && subEl && iconEl && mainBtn) {
+    mainBtn.setAttribute('aria-label', `Baixar Voxel para ${osName}`);
     if (isAvailable) {
-      if (osName === 'Linux') {
+      if (osName === 'Android') {
+        titleEl.textContent = 'Baixar para Android';
+        subEl.textContent = 'v1.0.6 (APK) • 60 MB • Android 8+';
+        iconEl.textContent = osIcon;
+        mainBtn.href = 'https://app.voxelchat.com.br/android/Voxel-Android-1.0.6.apk';
+        mainBtn.setAttribute('download', 'Voxel-Android-1.0.6.apk');
+        document.querySelectorAll('.header-actions a[download], .sticky-btn-download').forEach(link => {
+          link.href = mainBtn.href;
+          link.setAttribute('download', 'Voxel-Android-1.0.6.apk');
+          link.textContent = 'Baixar APK';
+          link.setAttribute('aria-label', 'Baixar Voxel para Android');
+        });
+        const stickyTag = document.querySelector('.sticky-cta-tag');
+        if (stickyTag) stickyTag.textContent = 'Android • v1.0.6';
+      } else if (osName === 'Linux') {
         titleEl.textContent = 'Baixar para Linux';
         subEl.textContent = 'v1.0.123 (.deb & terminal) • 162 MB';
         iconEl.textContent = osIcon;
@@ -126,7 +144,8 @@ function updateAllDownloadLinks() {
   });
 
   const stickyTag = document.querySelector('.sticky-cta-tag');
-  if (stickyTag) stickyTag.textContent = `Grátis • v${currentVersion}`;
+  if (stickyTag) stickyTag.textContent = window.navigator.userAgent.toLowerCase().includes('android')
+    ? 'Android • v1.0.6' : `Grátis • v${currentVersion}`;
 
   const versionTag = document.querySelector('.version-tag');
   if (versionTag) versionTag.textContent = `v${currentVersion}`;
@@ -330,7 +349,7 @@ function setupDownloadRedirects() {
     el.addEventListener('click', (e) => {
       // If element is inside Linux card or download link for Linux, let normal download flow happen or handle target
       const href = el.getAttribute('href') || '';
-      if (href.includes('/download/linux') || href.endsWith('.deb')) {
+      if (href.includes('/download/linux') || href.endsWith('.deb') || href.endsWith('.apk')) {
         return; // standard download
       }
 

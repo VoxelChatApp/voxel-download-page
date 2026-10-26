@@ -821,7 +821,7 @@ button {
 
 .platform-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin-bottom: 2.5rem;
   align-items: stretch;
@@ -857,6 +857,12 @@ button {
   display: flex;
   align-items: flex-start;
   overflow: hidden;
+}
+
+#download-android p {
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .platform-card:hover {

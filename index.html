@@ -61,7 +61,7 @@
   </script>
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/main.css?v=android-1.0.6">
 </head>
 
 <body>
@@ -142,10 +142,12 @@
             <a href="https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.124/Voxel-Setup-1.0.124.exe"
               download="Voxel-Setup-1.0.124.exe" id="primaryDownloadBtn" class="btn-cta-main"
               aria-label="Baixar Voxel para Windows">
+              <span id="primaryDownloadIcon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801" />
               </svg>
+              </span>
               <span>
                 <strong id="primaryDownloadTitle" style="display: block; font-size: 1rem; line-height: 1.2;">Baixar para
                   Windows</strong>
@@ -476,7 +478,7 @@
         <div class="eyebrow">DOWNLOAD OFICIAL</div>
         <h2 class="section-title">Baixe o Voxel diretamente.</h2>
         <p class="section-desc">
-          Disponível em versão portátil instantânea (sem necessidade de instalador, basta baixar e executar).
+          Escolha o instalador para Windows, Linux ou o APK para Android.
         </p>
       </div>
 
@@ -527,6 +529,37 @@
             <a href="https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.124/Voxel-Setup-1.0.124.exe"
               download="Voxel-Setup-1.0.124.exe" class="copy-btn"
               style="background: var(--text-primary); color: var(--bg-deep); font-weight: 700;">BAIXAR .EXE</a>
+          </div>
+        </div>
+
+        <!-- Android Card -->
+        <div class="platform-card" id="download-android">
+          <div>
+            <div class="platform-card-header">
+              <div class="platform-os-title">
+                <span aria-hidden="true">▯</span>
+                <span>Android</span>
+              </div>
+              <span class="platform-arch-pill"
+                style="color: var(--status-stable); border-color: rgba(163, 230, 53, 0.35);">APK DISPONÍVEL</span>
+            </div>
+            <p>Aplicativo nativo para Android 8 ou superior. Instale o APK e receba as próximas atualizações pelo app.</p>
+            <div class="platform-file-list">
+              <a href="https://app.voxelchat.com.br/android/Voxel-Android-1.0.6.apk"
+                download="Voxel-Android-1.0.6.apk" class="download-asset-item"
+                style="border-color: var(--border-strong); background: var(--bg-elevated);">
+                <span style="font-weight: 700; color: var(--text-primary);">Voxel para Android (.apk)</span>
+                <span class="asset-meta">1.0.6 · 60 MB</span>
+              </a>
+            </div>
+            <p>Ao instalar, o Android pode pedir permissão para instalar apps pelo navegador. Confirme para continuar.</p>
+          </div>
+          <div class="checksum-drawer">
+            <span>VERSÃO</span>
+            <span class="checksum-hash" style="color: var(--status-stable);">1.0.6 · ANDROID 8+</span>
+            <a href="https://app.voxelchat.com.br/android/Voxel-Android-1.0.6.apk"
+              download="Voxel-Android-1.0.6.apk" class="copy-btn"
+              style="background: var(--text-primary); color: var(--bg-deep); font-weight: 700;">BAIXAR APK</a>
           </div>
         </div>
 
@@ -1052,8 +1085,8 @@
         <div class="faq-card">
           <h3 class="faq-q">4. O Voxel funciona no celular (Android e iOS)?</h3>
           <p class="faq-a">
-            A plataforma pode ser acessada nos smartphones pelo navegador via Web App, e estamos desenvolvendo
-            ativamente a versão móvel nativa dedicada com interface responsiva e gavetas táteis para Android.
+            No Android, baixe o APK na seção de downloads e instale o aplicativo nativo. As próximas atualizações
+            são oferecidas pelo próprio app. No iPhone e iPad, acesse a versão web pelo navegador.
           </p>
         </div>
 
@@ -1252,7 +1285,7 @@
 
   <!-- Core JavaScript Modules -->
   <script src="scripts/voxel-canvas.js"></script>
-  <script src="scripts/main.js?v=1.0.124"></script>
+  <script src="scripts/main.js?v=android-1.0.6"></script>
 </body>
 
 </html>

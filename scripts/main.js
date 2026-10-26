@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.124/Voxel-Setup-1.0.124.exe';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.124/Voxel-Setup-1.0.124-repaired.exe';
 let currentVersion = '1.0.124';
-let currentFileSize = '113 MB';
-let currentFileName = 'Voxel-Setup-1.0.124.exe';
+let currentFileSize = '115 MB';
+let currentFileName = 'Voxel-Setup-1.0.124-repaired.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA
@@ -115,7 +115,7 @@ async function fetchLatestRelease() {
     const res = await fetch('https://api.github.com/repos/VoxelChatApp/voxel-download-page/releases/latest');
     if (res.ok) {
       const data = await res.json();
-      const asset = data.assets?.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));
+      const asset = data.assets?.find(a => a.name.endsWith('-repaired.exe')) || data.assets?.find(a => a.name.endsWith('.exe') && !a.name.includes('blockmap'));
       if (asset && data.tag_name) {
         currentDownloadUrl = asset.browser_download_url;
         currentFileName = asset.name;

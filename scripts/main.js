@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.124/Voxel-Setup-1.0.124-repaired.exe';
-let currentVersion = '1.0.124';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.125/Voxel-Setup-1.0.125.exe';
+let currentVersion = '1.0.125';
 let currentFileSize = '115 MB';
-let currentFileName = 'Voxel-Setup-1.0.124-repaired.exe';
+let currentFileName = 'Voxel-Setup-1.0.125.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA
@@ -72,24 +72,24 @@ function detectUserPlatform() {
     if (isAvailable) {
       if (osName === 'Android') {
         titleEl.textContent = 'Baixar para Android';
-        subEl.textContent = 'v1.0.6 (APK) • 60 MB • Android 8+';
+        subEl.textContent = 'v1.0.7 (APK) • 60 MB • Android 8+';
         iconEl.textContent = osIcon;
-        mainBtn.href = 'https://app.voxelchat.com.br/android/Voxel-Android-1.0.6.apk';
-        mainBtn.setAttribute('download', 'Voxel-Android-1.0.6.apk');
+        mainBtn.href = 'https://app.voxelchat.com.br/android/Voxel-Android-1.0.7.apk';
+        mainBtn.setAttribute('download', 'Voxel-Android-1.0.7.apk');
         document.querySelectorAll('.header-actions a[download], .sticky-btn-download').forEach(link => {
           link.href = mainBtn.href;
-          link.setAttribute('download', 'Voxel-Android-1.0.6.apk');
+          link.setAttribute('download', 'Voxel-Android-1.0.7.apk');
           link.textContent = 'Baixar APK';
           link.setAttribute('aria-label', 'Baixar Voxel para Android');
         });
         const stickyTag = document.querySelector('.sticky-cta-tag');
-        if (stickyTag) stickyTag.textContent = 'Android • v1.0.6';
+        if (stickyTag) stickyTag.textContent = 'Android • v1.0.7';
       } else if (osName === 'Linux') {
         titleEl.textContent = 'Baixar para Linux';
-        subEl.textContent = 'v1.0.123 (.deb & terminal) • 162 MB';
+        subEl.textContent = 'v1.0.125 (.deb & terminal) • 115 MB';
         iconEl.textContent = osIcon;
         mainBtn.href = 'https://app.voxelchat.com.br/download/linux';
-        mainBtn.setAttribute('download', 'Voxel-1.0.110-amd64.deb');
+        mainBtn.setAttribute('download', 'Voxel-1.0.125-amd64.deb');
       } else {
         titleEl.textContent = `Baixar para ${osName}`;
         subEl.textContent = `v${currentVersion} (Instalador .exe) • ${currentFileSize}`;
@@ -145,7 +145,7 @@ function updateAllDownloadLinks() {
 
   const stickyTag = document.querySelector('.sticky-cta-tag');
   if (stickyTag) stickyTag.textContent = window.navigator.userAgent.toLowerCase().includes('android')
-    ? 'Android • v1.0.6' : `Grátis • v${currentVersion}`;
+    ? 'Android • v1.0.7' : `Grátis • v${currentVersion}`;
 
   const versionTag = document.querySelector('.version-tag');
   if (versionTag) versionTag.textContent = `v${currentVersion}`;

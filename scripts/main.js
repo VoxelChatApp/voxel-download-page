@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.126/Voxel-Setup-1.0.126.exe';
-let currentVersion = '1.0.126';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.127/Voxel-Setup-1.0.127.exe';
+let currentVersion = '1.0.127';
 let currentFileSize = '115 MB';
-let currentFileName = 'Voxel-Setup-1.0.126.exe';
+let currentFileName = 'Voxel-Setup-1.0.127.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA
@@ -86,10 +86,10 @@ function detectUserPlatform() {
         if (stickyTag) stickyTag.textContent = 'Android • v1.0.8';
       } else if (osName === 'Linux') {
         titleEl.textContent = 'Baixar para Linux';
-        subEl.textContent = 'v1.0.126 (.deb & terminal) • 115 MB';
+        subEl.textContent = 'v1.0.127 (.deb & terminal) • 115 MB';
         iconEl.textContent = osIcon;
         mainBtn.href = 'https://app.voxelchat.com.br/download/linux';
-        mainBtn.setAttribute('download', 'Voxel-1.0.126-amd64.deb');
+        mainBtn.setAttribute('download', 'Voxel-1.0.127-amd64.deb');
       } else {
         titleEl.textContent = `Baixar para ${osName}`;
         subEl.textContent = `v${currentVersion} (Instalador .exe) • ${currentFileSize}`;

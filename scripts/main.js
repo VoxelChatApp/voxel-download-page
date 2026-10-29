@@ -86,7 +86,7 @@ function detectUserPlatform() {
         if (stickyTag) stickyTag.textContent = 'Android • v1.0.8';
       } else if (osName === 'Linux') {
         titleEl.textContent = 'Baixar para Linux';
-        subEl.textContent = 'v1.0.129 (.deb & terminal) • 115 MB';
+        subEl.textContent = 'v1.0.129 (.deb & terminal) • 140 MB';
         iconEl.textContent = osIcon;
         mainBtn.href = 'https://app.voxelchat.com.br/download/linux';
         mainBtn.setAttribute('download', 'Voxel-1.0.129-amd64.deb');

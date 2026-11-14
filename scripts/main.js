@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Default release state (auto-updated dynamically from GitHub API)
-let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.135/Voxel-Setup-1.0.135.exe';
-let currentVersion = '1.0.135';
+let currentDownloadUrl = 'https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.136/Voxel-Setup-1.0.136.exe';
+let currentVersion = '1.0.136';
 let currentFileSize = '19 MB';
-let currentFileName = 'Voxel-Setup-1.0.135.exe';
+let currentFileName = 'Voxel-Setup-1.0.136.exe';
 
 /**
  * Auto-detect user OS and update primary download CTA

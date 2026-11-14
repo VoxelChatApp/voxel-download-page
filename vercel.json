@@ -5,17 +5,17 @@
   "redirects": [
     {
       "source": "/baixar",
-      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.133/Voxel-Setup-1.0.133.exe",
+      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.134/Voxel-Setup-1.0.134.exe",
       "permanent": false
     },
     {
       "source": "/download",
-      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.133/Voxel-Setup-1.0.133.exe",
+      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.134/Voxel-Setup-1.0.134.exe",
       "permanent": false
     },
     {
       "source": "/setup.exe",
-      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.133/Voxel-Setup-1.0.133.exe",
+      "destination": "https://github.com/VoxelChatApp/voxel-download-page/releases/download/v1.0.134/Voxel-Setup-1.0.134.exe",
       "permanent": false
     },
     {

@@ -160,7 +160,36 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
 @media (max-width:1050px){.dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.dl{grid-template-columns:1fr}}
 
-/* ---------- 06 faq ---------- */
+/* ---------- release notes ---------- */
+.s-updates{--bg:var(--bg1)}
+.release-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-top:48px;align-items:start}
+.release-intro h3{font-size:72px;line-height:1;letter-spacing:-.045em;font-weight:600}
+.release-date{color:var(--accent-hi);font-size:14px;line-height:1.5}
+.release-intro .release-date{margin:16px 0 24px}
+.release-intro>p:last-child{font-size:18px;line-height:1.6;color:var(--ink)}
+.release-notes{list-style:none;display:grid;gap:24px}
+.release-notes h4{font-size:18px;line-height:1.5;font-weight:600;margin-bottom:8px}
+.release-notes p{font-size:16px;line-height:1.6;color:var(--ink);max-width:64ch;font-weight:300}
+.release-recent{margin-top:40px;display:grid;gap:8px}
+.release-row{background:var(--bg2);border-radius:16px}
+.release-row summary{display:grid;grid-template-columns:1fr auto 24px;align-items:center;gap:24px;padding:24px;list-style:none;cursor:pointer}
+.release-version{font-size:24px;line-height:1.3;font-weight:600;letter-spacing:-.025em}
+.release-toggle{font-size:24px;line-height:1;text-align:center;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.release-row[open]>summary .release-toggle,.release-archive[open]>summary .release-toggle{transform:rotate(45deg)}
+.release-body{padding:8px 24px 32px;max-width:1000px}
+.release-row[open] .release-body{animation:release-in .5s cubic-bezier(.22,1,.36,1) both}
+.release-archive{margin-top:16px}
+.release-archive>summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;font-size:18px;font-weight:600;cursor:pointer;list-style:none}
+.release-history{display:grid;gap:8px}
+.release-row summary::-webkit-details-marker,.release-archive>summary::-webkit-details-marker{display:none}
+.s-updates summary:hover{color:var(--accent-hi)}
+.s-updates summary:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@keyframes release-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(max-width:860px){.release-feature{gap:32px;grid-template-columns:1fr}.release-intro h3{font-size:60px}.release-intro>p:last-child br{display:none}}
+@media(max-width:560px){.release-feature{margin-top:32px}.release-intro h3{font-size:48px}.release-row summary{grid-template-columns:1fr 24px;gap:8px;padding:24px 16px}.release-row .release-date{grid-column:1;grid-row:2}.release-toggle{grid-column:2;grid-row:1 / span 2}.release-body{padding:0 16px 24px}.release-notes p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.release-row[open] .release-body{animation:none}.release-toggle{transition:none}}
+
+/* ---------- 07 faq ---------- */
 .s-faq{--bg:var(--bg2)}
 .faq{margin-top:clamp(28px,5vh,52px);max-width:880px;display:grid;gap:10px}
 .faq details{border:1px solid var(--line);border-radius:16px;background:rgba(11,15,21,.25);overflow:hidden}
@@ -194,7 +223,7 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
 <header class="nav">
   <a class="brand" href="#" data-go="0"><img src="logo.svg" alt="">VOXEL</a>
   <div class="nav-r">
-    <span class="count"><b id="cnum">01</b> / 07<em id="cname">Início</em></span>
+    <span class="count"><b id="cnum">01</b> / <span id="ctotal">08</span><em id="cname">Início</em></span>
     <a class="btn sm" href="https://app.voxelchat.com.br/">Usar na web</a>
     <a class="btn sm" href="#download" data-go="5">Baixar</a>
   </div>
@@ -301,24 +330,61 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
         <div class="pf" data-rise style="--i:2"><span class="badge">LNX</span><h3>Linux</h3><p>Debian, Ubuntu, Pop!_OS e Mint, com aceleração por GPU.</p><span class="meta">.DEB · 196 MB</span><a class="btn" href="https://app.voxelchat.com.br/download/linux">Baixar .deb</a></div>
         <div class="pf off" data-rise style="--i:3"><span class="badge">MAC</span><h3>macOS</h3><p>Apple Silicon e Intel, em empacotamento e testes.</p><span class="meta">EM ANDAMENTO</span><span class="btn">Em breve</span></div>
       </div>
-      <div class="ctas">
-        <a class="btn ghost" href="https://app.voxelchat.com.br/">Usar na web</a>
-      </div>
     </div>
     <div class="shade"></div>
   </section>
 
-  <section class="scr s-faq iso" data-name="Perguntas" data-fx="windows" data-tone="dark" aria-labelledby="h6">
+  <section class="scr s-updates" id="changelog" data-name="Atualizações" data-fx="blinds" data-tone="dark" aria-labelledby="h6">
     <div class="scr-in">
-      <p class="kicker">06 · Perguntas</p>
-      <h2 id="h6"><span data-scramble>Ainda com</span><span class="dim" data-scramble>alguma dúvida?</span></h2>
+      <p class="kicker">06 · Atualizações</p>
+      <h2 id="h6"><span data-scramble>O Voxel</span><span class="dim" data-scramble>segue evoluindo.</span></h2>
+      <div class="release-feature">
+        <div class="release-intro" data-rise style="--i:0">
+          <h3>v1.0.137</h3>
+          <p class="release-date">14 de Novembro de 2026</p>
+          <p>Menos peso na máquina.<br> Mais espaço para a conversa.</p>
+        </div>
+        <div data-rise style="--i:1"><ul class="release-notes"><li><h4>Desempenho</h4><p>Música do YouTube toca como áudio puro no app (menos memória), animações pausam com a janela em segundo plano e o novo Modo Leve desliga os efeitos de vidro.</p></li><li><h4>Clipes</h4><p>A gravação de clipes saiu do app e o atalho Alt+C fica livre para outros programas.</p></li></ul></div>
+      </div>
+      <div class="release-recent" data-rise style="--i:2">
+        <details class="release-row"><summary><span class="release-version">v1.0.136</span><span class="release-date">14 de Novembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Música</h4><p>O player agora toca playlists e álbuns do Spotify e playlists e mixes (rádios) do YouTube: a primeira faixa começa na hora e o resto entra na fila.</p></li><li><h4>Overlay</h4><p>O overlay volta a esmaecer depois de passar o mouse no botão de controles.</p></li><li><h4>Chat</h4><p>Menções com @ só destacam quem participa da conversa.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.135</span><span class="release-date">13 de Novembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Windows</h4><p>Atualização de manutenção com as mesmas correções da 1.0.131.</p></li><li><h4>Plataformas</h4><p>Windows 1.0.135; Linux permanece em 1.0.129 e Android nativo em 1.0.8.</p></li></ul></div></details>
+      </div>
+      <details class="release-archive" data-rise style="--i:3">
+        <summary>Histórico de versões<span class="release-toggle" aria-hidden="true">+</span></summary>
+        <div class="release-history"><details class="release-row"><summary><span class="release-version">v1.0.131</span><span class="release-date">13 de Novembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Transmissão</h4><p>Compartilhar tela com áudio não captura mais a voz da call; só o som do jogo ou dos programas é transmitido.</p></li><li><h4>Overlay</h4><p>Abrir o overlay no jogo não deixa mais o app travado em "Não está respondendo".</p></li><li><h4>Plataformas</h4><p>Windows 1.0.131; Linux permanece em 1.0.129 e Android nativo em 1.0.8.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.130</span><span class="release-date">13 de Novembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Windows</h4><p>Novo aplicativo para Windows em Tauri e Rust: instalador de 19 MB, menos memória e inicialização mais rápida, com a mesma interface.</p></li><li><h4>Música</h4><p>Player mostra o nome e a capa da faixa, e a busca traz resultados reais do YouTube.</p></li><li><h4>Watchparty</h4><p>Watchparty sincronizada pode ser iniciada pelo botão da chamada ou pelo Player.</p></li><li><h4>Plataformas</h4><p>Windows 1.0.130; Linux permanece em 1.0.129 e Android nativo em 1.0.8.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.129</span><span class="release-date">29 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Chat</h4><p>Campo de mensagem corrigido: botões de anexo, emoji e envio alinhados e com espaçamento uniforme.</p></li><li><h4>Escrita</h4><p>Texto sem cortes e altura ajustada para mensagens com várias linhas. Validado em desktop, tablet e celular.</p></li><li><h4>Plataformas</h4><p>Web, Windows e Linux 1.0.129; Android nativo permanece em 1.0.8.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.128</span><span class="release-date">29 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Chat</h4><p>Links clicáveis com aviso de saída e cópia de mensagens e blocos.</p></li><li><h4>Código</h4><p>Destaque de sintaxe, seleção e numeração de linhas, detecção de código colado e preferências de formatação.</p></li><li><h4>Conversas</h4><p>Divisores de dia: Hoje, Ontem e data. Web, Windows e Linux 1.0.128; Android nativo 1.0.8.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.127</span><span class="release-date">28 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Áudio</h4><p>Recuperação automática do microfone e da saída de áudio ao desconectar e reconectar o fone.</p></li><li><h4>Dispositivos</h4><p>A chamada acompanha a troca dos dispositivos padrão do sistema e retoma o fone selecionado quando ele volta.</p></li><li><h4>Plataformas</h4><p>Web, Windows e Linux 1.0.127; Android nativo permanece em 1.0.8.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.126</span><span class="release-date">27 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Câmeras</h4><p>Ligue ou desligue sua câmera na chamada, junto com áudio e compartilhamento de tela.</p></li><li><h4>Transmissão</h4><p>FPS medido em tempo real e diagnóstico de captura, envio e recebimento. Correções na adaptação à perda de vídeo.</p></li><li><h4>Plataformas</h4><p>Web, Windows e Linux 1.0.126; Android nativo 1.0.8 com câmera na chamada.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.125</span><span class="release-date">27 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Transmissão</h4><p>Qualidade automática com alvo mínimo de 30 FPS e ajuste de resolução conforme a conexão.</p></li><li><h4>Call</h4><p>Orçamento de envio compartilhado entre espectadores, com margem para o áudio e métricas reais de vídeo.</p></li><li><h4>Plataformas</h4><p>Web, Windows e Linux 1.0.125; Android nativo 1.0.7 com captura a 30 FPS.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.124</span><span class="release-date">15 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Jogos</h4><p>Xadrez redesenhado, movimentos por arraste e seletor visual de Xadrez e Quiz com opção de encerrar.</p></li><li><h4>Conta</h4><p>Recuperação de senha por código enviado ao e-mail da conta.</p></li><li><h4>Call</h4><p>Controles da transmissão somem quando inativos, painel de voz compacto e recuperação de áudio aprimorada.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.123</span><span class="release-date">12 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Chat</h4><p>Seletor de emojis sem recortes, com emojis comuns e personalizados, também em telas pequenas.</p></li><li><h4>Xadrez</h4><p>Partida no palco central, abertura para as outras pessoas da call e indicação clara de como entrar como adversário.</p></li><li><h4>Sons</h4><p>Painel de efeitos sonoros junto dos controles de microfone, áudio, transmissão e watchparty.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.122</span><span class="release-date">12 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Jogos</h4><p>Xadrez com regras validadas, espectadores e placar da sessão. Quiz em grupo com cinco rodadas.</p></li><li><h4>Calls</h4><p>Salas temporárias com dono, convidados e limite; espaços de voz por proximidade.</p></li><li><h4>Identidade</h4><p>Perfil próprio por comunidade e opção de retomar a call em outro dispositivo.</p></li><li><h4>Conexão</h4><p>Saúde da chamada, diagnóstico e recuperação automática de áudio. Correção do servidor de retransmissão.</p></li><li><h4>Plataformas</h4><p>Windows, web e Linux 1.0.122; Android 1.0.6 pelo atualizador nativo.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.121</span><span class="release-date">12 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Atualizador</h4><p>Instalador Windows inicia em um processo independente e confirma o início antes de fechar o Voxel.</p></li><li><h4>Diagnóstico</h4><p>Erros de instalação aparecem no aplicativo; correção da leitura dos registros do PowerShell.</p></li><li><h4>Compatibilidade</h4><p>Testado com caminhos que contêm espaços e acentos. Android permanece 1.0.5 e Linux 1.0.120.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.120</span><span class="release-date">12 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Voz</h4><p>Supressão neural RNNoise no desktop e web e controles de modificação de voz redesenhados.</p></li><li><h4>Conquistas</h4><p>Medalhas com geometria, borda e relevo; missões com progresso e desbloqueio validados pelo servidor.</p></li><li><h4>Personalização</h4><p>Atalhos editáveis e dez estilos visuais, incluindo Usinado, Linho, Ardósia, Planta e Terminal.</p></li><li><h4>Comunidades</h4><p>Até 50 emojis por servidor e painel de efeitos sonoros. O Android 1.0.5 recebe os sons da call pelo atualizador.</p></li><li><h4>Conexões</h4><p>Verificação de conta Steam; outras plataformas dependem da configuração OAuth.</p></li><li><h4>Segurança</h4><p>Instalador e OTA contêm somente o cliente. A atualização de segurança do servidor requer novo login.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.116</span><span class="release-date">02 de Outubro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Canais & permissões</h4><p>Novo sistema completo de gerenciamento de canais: modal dedicado para edição de tópicos, limites de usuários, tipos de canal, menu contextual de ações e permissões granulares por cargo e membro.</p></li><li><h4>Motor de áudio</h4><p>Implementação de recuperação automática de áudio WebRTC: auto-restauração contínua de streams e chamadas em caso de queda momentânea de conexão ou instabilidade na sinalização.</p></li><li><h4>Sincronização em tempo real</h4><p>Sincronização imediata de alterações de canais e permissões para todos os clientes conectados sem necessidade de recarregar a interface.</p></li><li><h4>Atualizador oficial</h4><p>Distribuição instantânea do novo patch via instalador executável Windows e sistema OTA para clientes ativos.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.115</span><span class="release-date">17 de Setembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Autoupdate</h4><p>Novo motor de atualização automática sem reinicialização forçada, com suporte a privilégios administrativos no Windows (C:\Program Files) e janelas de console do CMD totalmente ocultas.</p></li><li><h4>Linux oficial</h4><p>Lançamento do pacote nativo .deb para Debian/Ubuntu e script de instalação automatizado via terminal curl -sSL https://app.voxelchat.com.br/install.sh | bash com atalhos no sistema.</p></li><li><h4>Voz & webrtc</h4><p>Correção definitiva de áudio WebRTC em chamadas diretas e salas de voz, com reconexão instantânea resiliente após instabilidades de sinalização.</p></li><li><h4>Presença & social</h4><p>Indicadores dinâmicos de status "Em Voz" nas conversas diretas (DMs), no cabeçalho e na lista de membros, além de suporte a fotos personalizadas em servidores.</p></li><li><h4>Segurança & dados</h4><p>Persistência completa de canais e servidores em banco de dados PostgreSQL integrado, imune a reinicializações ou quedas de serviço.</p></li><li><h4>V1.0.115</h4><p>Fix definitivo no instalador do updater e reinicialização suave do aplicativo.</p></li><li><h4>V1.0.112</h4><p>Ocultação total de janelas de console do CMD durante aplicação de patches em segundo plano.</p></li><li><h4>V1.0.111</h4><p>Correção de permissões no Windows (EPERM em C:\Program Files) com suporte a elevação e swap assistido.</p></li><li><h4>V1.0.111</h4><p>Janela de atualização agora busca e exibe dinamicamente a versão exata do servidor via /api/version.</p></li><li><h4>V1.0.109</h4><p>Pipeline automatizado de empacotamento com validação de integridade do arquivo .asar.</p></li><li><h4>V1.0.110</h4><p>Empacotamento Debian oficial (.deb 196 MB) com ícones, lançador de desktop e dependências nativas.</p></li><li><h4>V1.0.110</h4><p>Script oficial de instalação rápida via terminal: curl -sSL https://app.voxelchat.com.br/install.sh | bash.</p></li><li><h4>V1.0.110</h4><p>Fallback com suporte a --no-sandbox no script de inicialização para compatibilidade em qualquer distro.</p></li><li><h4>V1.0.110</h4><p>Adição da seção de downloads (Windows, Linux .deb e comando curl) na tela de login Web.</p></li><li><h4>V1.0.113</h4><p>Reconexão automática das chamadas de voz e áudio após instabilidade ou queda temporária na sinalização.</p></li><li><h4>V1.0.110</h4><p>Correção no áudio de chamadas associando diretamente o fluxo WebRTC a elementos de áudio nativos.</p></li><li><h4>V1.0.110</h4><p>Novo status visual "Em Voz" nas conversas diretas (DMs), cabeçalho de conversa e na barra lateral de participantes.</p></li><li><h4>V1.0.95</h4><p>Integração de relay TURN (CoTURN na nuvem Oracle) com negociação perfeita (Perfect Negotiation) para redes com firewall/CGNAT.</p></li><li><h4>V1.0.114</h4><p>Suporte a upload e fotos customizadas para avatares de servidores.</p></li><li><h4>V1.0.110</h4><p>Login automático e instantâneo na verificação de e-mail para contas existentes, eliminando timeouts de tela.</p></li><li><h4>V1.0.109</h4><p>Build de produção e deploy automatizado do bundle Web para a VPS do Voxel.</p></li><li><h4>V1.0.107</h4><p>Migração e persistência definitiva de servidores, canais e mensagens no PostgreSQL.</p></li><li><h4>V1.0.108</h4><p>Reforço de segurança no boot do servidor com validação e fallback seguro para JWT_SECRET.</p></li><li><h4>V1.0.108</h4><p>Proteção de concorrência na escrita de arquivos e manipulação segura de papéis e permissões.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.110</span><span class="release-date">17 de Setembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Linux</h4><p>Lançamento do pacote instalador .deb e script curl com instalador completo para Linux.</p></li><li><h4>Voz</h4><p>Fix na reprodução de áudio WebRTC em chamadas e sinalização de canais.</p></li><li><h4>Ui</h4><p>Indicador dinâmico de presença em chamada de voz nas DMs e barra de membros.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.105</span><span class="release-date">13 de Setembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Banco de dados</h4><p>Integração de persistência em PostgreSQL para canais e servidores evitando perda de dados no reboot.</p></li><li><h4>Segurança</h4><p>Blindagem do boot do servidor com verificação de integridade e fallback seguro de tokens.</p></li></ul></div></details>
+        <details class="release-row"><summary><span class="release-version">v1.0.100</span><span class="release-date">13 de Setembro de 2026</span><span class="release-toggle" aria-hidden="true">+</span></summary><div class="release-body"><ul class="release-notes"><li><h4>Ota update</h4><p>Novo sistema de distribuição de atualizações OTA diretamente da nuvem Oracle.</p></li><li><h4>Webrtc</h4><p>Implementação de relay CoTURN para contornar bloqueios de operadoras e CGNAT.</p></li></ul></div></details></div>
+      </details>
+    </div>
+    <div class="shade"></div>
+  </section>
+
+  <section class="scr s-faq iso" data-name="Perguntas" data-fx="windows" data-tone="dark" aria-labelledby="h7">
+    <div class="scr-in">
+      <p class="kicker">07 · Perguntas</p>
+      <h2 id="h7"><span data-scramble>Ainda com</span><span class="dim" data-scramble>alguma dúvida?</span></h2>
       <div class="faq">
         <details data-rise style="--i:0"><summary>O Voxel é gratuito?<i></i></summary><p>Sim. Voz em 384 kbps, tela a 60 FPS e o player de música estão liberados para todo mundo, sem plano pago.</p></details>
         <details data-rise style="--i:1"><summary>Em quais plataformas ele roda?<i></i></summary><p>Windows 10 e 11, Linux (Debian, Ubuntu e derivados) e Android 8 ou superior. A versão para macOS está em andamento.</p></details>
         <details data-rise style="--i:2"><summary>Como funcionam as atualizações?<i></i></summary><p>O app desktop se atualiza sozinho. No Android, depois de instalar o APK, as próximas versões chegam pelo próprio app.</p></details>
         <details data-rise style="--i:3"><summary>Ele pesa durante os jogos?<i></i></summary><p>O Voxel roda em Tauri 2 com Rust por baixo, sem um navegador inteiro embutido. Em segundo plano, o uso fica entre 8,5% e 18% de CPU.</p></details>
       </div>
-      <footer class="foot"><span class="brand"><img src="logo.svg" alt="" style="width:26px;height:26px">VOXEL</span><span>Voxel · Sua comunidade por perto.</span></footer>
+      <footer class="foot"><span class="brand"><img src="logo.svg" alt="" style="width:26px;height:26px">VOXEL</span><a href="#changelog" data-go="6">Atualizações</a><span>Voxel · Sua comunidade por perto.</span></footer>
     </div>
     <div class="shade"></div>
   </section>
@@ -351,6 +417,7 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
   var S=$$('.scr').map(function(el,i){return {el:el,i:i,inn:el.querySelector('.scr-in'),shade:el.querySelector('.shade'),
     fx:el.dataset.fx,name:el.dataset.name,tone:el.dataset.tone||'dark',over:0,hold:0,s:0,entered:false,c:{}};});
   var N=S.length,track=d.getElementById('track'),bar=d.getElementById('bar');
+  d.getElementById('ctotal').textContent=String(N).padStart(2,'0');
   var W=w.innerWidth,H=w.innerHeight,T=H,total=0,dirty=true,dom=-1,heroLeave=0,visible={};
 
   function css(o,el,k,v){var key=(el===o.el?'':el===o.inn?'i':'s')+k;if(o.c[key]!==v){o.c[key]=v;el.style[k]=v;}}
@@ -584,7 +651,7 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
 
   layout();
   if(!FLAT)render(cur);
-  (d.fonts&&d.fonts.ready?d.fonts.ready:Promise.resolve()).then(function(){layout();t0=performance.now()+150;});
+  (d.fonts&&d.fonts.ready?d.fonts.ready:Promise.resolve()).then(function(){layout();t0=performance.now()+150;var anchor=location.hash.slice(1),idx=S.findIndex(function(o){return o.el.id===anchor;});if(anchor&&idx>=0)go(idx);});
   setTimeout(function(){if(!t0)t0=performance.now();},1500);
   requestAnimationFrame(frame);
 })();

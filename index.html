@@ -37,7 +37,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :root[data-tone=light] .nav{color:var(--mist-ink)}
 :root[data-tone=light] .count{color:var(--mist-muted)}
 :root[data-tone=light] .count b{color:var(--mist-ink)}
-@media (max-width:560px){.count em{display:none}}
+@media (max-width:560px){.count{display:none}.nav-r{gap:8px}}
 
 .dots{position:fixed;right:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:10px}
 .dots button{width:10px;height:10px;border-radius:3px;background:rgba(148,163,184,.35);transform:rotate(45deg);transition:background .3s,transform .3s}
@@ -195,6 +195,7 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
   <a class="brand" href="#" data-go="0"><img src="logo.svg" alt="">VOXEL</a>
   <div class="nav-r">
     <span class="count"><b id="cnum">01</b> / 07<em id="cname">Início</em></span>
+    <a class="btn sm" href="https://app.voxelchat.com.br/">Usar na web</a>
     <a class="btn sm" href="#download" data-go="5">Baixar</a>
   </div>
 </header>
@@ -299,6 +300,9 @@ kbd{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 
         <div class="pf" data-rise style="--i:1"><span class="badge">AND</span><h3>Android</h3><p>Android 8 ou superior. As próximas versões chegam pelo app.</p><span class="meta">.APK · ANDROID 8+</span><a class="btn" href="https://app.voxelchat.com.br/android/Voxel-Android-1.0.8.apk">Baixar APK</a></div>
         <div class="pf" data-rise style="--i:2"><span class="badge">LNX</span><h3>Linux</h3><p>Debian, Ubuntu, Pop!_OS e Mint, com aceleração por GPU.</p><span class="meta">.DEB · 196 MB</span><a class="btn" href="https://app.voxelchat.com.br/download/linux">Baixar .deb</a></div>
         <div class="pf off" data-rise style="--i:3"><span class="badge">MAC</span><h3>macOS</h3><p>Apple Silicon e Intel, em empacotamento e testes.</p><span class="meta">EM ANDAMENTO</span><span class="btn">Em breve</span></div>
+      </div>
+      <div class="ctas">
+        <a class="btn ghost" href="https://app.voxelchat.com.br/">Usar na web</a>
       </div>
     </div>
     <div class="shade"></div>

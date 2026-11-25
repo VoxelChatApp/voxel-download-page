@@ -1,5 +1,11 @@
 # Voxel — Landing Page & Download Portal
 
+> Produção atual: `https://voxelchat.com.br`, servido no Dokploy pelo serviço
+> `voxel-downloadpage-25fo4j`, branch `voxel-lab-live`. A branch `main` contém
+> a página antiga. Desenvolva primeiro em um checkout de teste fora de C:.
+> Downloads revisados: Linux x64 1.0.129 (.deb e .tar.gz), Android APK 1.0.8
+> e Windows 1.0.138; arquivos públicos do GitHub, sem depender das rotas antigas do app.
+
 Landing page oficial para o **Voxel** — Motor volumétrico nativo bruto, sólido e de alto desempenho.
 
 Desenvolvido com foco em estética monolítica/brutalista refinada: tipografia precisa, paleta de matérias cruas (concreto, latão, basalto, quartzo), zero neons espalhafatosos e um viewport interativo 3D em Canvas isométrico nativo.

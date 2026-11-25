@@ -3,3 +3,5 @@
 node_modules
 assets/VoxelVideo.mp4
 .ftp-deploy-sync-state.json
+
+.qa

@@ -4,7 +4,7 @@
 > `voxel-downloadpage-25fo4j`, branch `voxel-lab-live`. A branch `main` contém
 > a página antiga. Desenvolva primeiro em um checkout de teste fora de C:.
 > Downloads revisados: Linux x64 1.0.129 (.deb e .tar.gz), Android APK 1.0.8
-> e Windows 1.0.141; arquivos públicos do GitHub, sem depender das rotas antigas do app.
+> e Windows 1.0.142; arquivos públicos do GitHub, sem depender das rotas antigas do app.
 
 Landing page oficial para o **Voxel** — Motor volumétrico nativo bruto, sólido e de alto desempenho.
 
